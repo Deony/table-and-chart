@@ -7,21 +7,10 @@ import './spreadsheet.css';
 
 class Spreadsheet extends React.Component {
     constructor() {
-        super()
-
-        this.data = [
-            {
-                name: 'test1',
-                count: 5
-            },
-            {
-                name: 'test2',
-                count: 10
-            },
-        ];
+        super();
 
         this.state = {
-            rows: this.data
+            rows: []
         }
     }
 
@@ -44,6 +33,17 @@ class Spreadsheet extends React.Component {
         }))
     }
 
+    removeRow = (rowIndex) => {
+        this.setState((state) => {
+            const updatedRows = [...state.rows]; //shallow copy of all rows
+            updatedRows.splice(rowIndex, 1);
+
+            return {
+                rows: updatedRows
+            }
+        })
+    }
+
     render() {
         const { rows } = this.state;
 
@@ -51,7 +51,7 @@ class Spreadsheet extends React.Component {
             <div className='spreadsheet'>
                 <SpreadsheetMenu addNewRow={this.addNewRow} />
                 <SpreadsheetEditLine />
-                <SpreadsheetTable onChangeCell={this.onChangeCell} rows={rows} addNewRow={this.addNewRow} />
+                <SpreadsheetTable rows={rows} onChangeCell={this.onChangeCell} removeRow={this.removeRow} />
             </div>
         )
     }
