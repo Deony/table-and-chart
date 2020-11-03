@@ -11,7 +11,3 @@
     border: none;
     padding: 8px;
 }
-
-.spreadsheet-table-cell input:focus {
-    outline: none;
-}
