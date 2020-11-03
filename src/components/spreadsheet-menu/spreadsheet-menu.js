@@ -6,7 +6,7 @@ import AddIcon from "@material-ui/icons/Add";
 import SaveIcon from "@material-ui/icons/Save";
 import React from "react";
 
-const SpreadsheetMenu = ({ addNewRow }) => {
+const SpreadsheetMenu = ({ addNewRow, resetTable }) => {
     return (
         <nav className='spreadsheet-menu'>
             <Button startIcon={<UndoIcon />} />
@@ -15,7 +15,7 @@ const SpreadsheetMenu = ({ addNewRow }) => {
 
             <Button startIcon={<AddIcon />} onClick={addNewRow} >Add new row</Button>
 
-            <Button>Reset</Button>
+            <Button onClick={resetTable}>Reset</Button>
 
             <Button>Cancel</Button>
 

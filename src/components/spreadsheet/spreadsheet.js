@@ -44,12 +44,22 @@ class Spreadsheet extends React.Component {
         })
     }
 
+    resetTable = () => {
+        const { rows } = this.state;
+        if (rows.length) {
+            this.setState({
+                rows: []
+            })
+        }
+    }
+
+
     render() {
         const { rows } = this.state;
 
         return (
             <div className='spreadsheet'>
-                <SpreadsheetMenu addNewRow={this.addNewRow} />
+                <SpreadsheetMenu addNewRow={this.addNewRow} resetTable={this.resetTable} />
                 <SpreadsheetEditLine />
                 <SpreadsheetTable rows={rows} onChangeCell={this.onChangeCell} removeRow={this.removeRow} />
             </div>
