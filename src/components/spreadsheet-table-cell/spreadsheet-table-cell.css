@@ -1,6 +1,5 @@
 .spreadsheet-table-cell {
     box-sizing: content-box;
-    text-align: center;
     min-width: 120px;
 
     border: 1px solid #e4e4e4;
@@ -10,4 +9,14 @@
     background: transparent;
     border: none;
     padding: 8px;
+    text-align: center;
+    cursor: default;
+}
+
+.spreadsheet-table-cell:first-child {
+    background: #ededed;
+}
+
+.spreadsheet-table-cell input:read-only:focus {
+    outline: none;
 }

@@ -6,7 +6,7 @@ import './spreadsheet-table-header.css';
 const SpreadsheetTableHeader = () => (
     <thead className='spreadsheet-table-header'>
         <tr>
-            {Object.values(tableRowLabel).map(el => <SpreadsheetTableCell key={el.key} label={el.label} />)}
+            {Object.values(tableRowLabel).map(el => <SpreadsheetTableCell key={el.key} label={el.label} readOnly={true} />)}
         </tr>
     </thead>
 )

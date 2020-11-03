@@ -5,7 +5,7 @@ import './spreadsheet-table-row.css';
 
 const SpreadsheetTableRow = ({index, row: {name, count}, onChange}) => (
     <tr className='spreadsheet-table-row'>
-        <SpreadsheetTableCell label={index + 1} />
+        <SpreadsheetTableCell label={index + 1} readOnly={true} />
         <SpreadsheetTableCell label={name} onChange={(value) => onChange(value, index, tableRowLabel.name.name)} />
         <SpreadsheetTableCell label={count} onChange={(value) => onChange(value, index, tableRowLabel.count.name)} />
     </tr>
