@@ -1,18 +1,13 @@
 .spreadsheet-menu {
+    width: 100%;
     background: #f7f7f7;
+    padding: 10px 0;
 }
 
-.spreadsheet-menu ul {
-    list-style-type: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+.spreadsheet-menu button {
+    margin-right: 20px;
 }
 
-.spreadsheet-menu .btn {
-    transition: background .3s ease;
-}
-
-.spreadsheet-menu .btn:hover {
-    background: rgba(0,0,0,.15);
+.spreadsheet-menu button:first-child {
+    margin-right: 0;
 }
