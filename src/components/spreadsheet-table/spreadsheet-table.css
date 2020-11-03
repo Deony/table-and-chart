@@ -2,3 +2,7 @@
     overflow: auto;
     height: 100%;
 }
+
+.table-container {
+    border-collapse: collapse;
+}

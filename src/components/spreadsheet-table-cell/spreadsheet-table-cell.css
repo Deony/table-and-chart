@@ -1,0 +1,17 @@
+.spreadsheet-table-cell {
+    box-sizing: content-box;
+    text-align: center;
+    min-width: 120px;
+
+    border: 1px solid #e4e4e4;
+}
+
+.spreadsheet-table-cell input {
+    background: transparent;
+    border: none;
+    padding: 8px;
+}
+
+.spreadsheet-table-cell input:focus {
+    outline: none;
+}
