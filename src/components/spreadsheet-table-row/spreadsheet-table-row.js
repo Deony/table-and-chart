@@ -4,14 +4,39 @@ import {tableRowLabel} from "../../constants";
 import './spreadsheet-table-row.css';
 
 
-const SpreadsheetTableRow = ({ index, row: {name, count}, onChange, removeRow }) => (
-    <tr className='spreadsheet-table-row'>
-        <SpreadsheetTableCell label={index + 1} readOnly={true} />
-        <SpreadsheetTableCell label={name} onChange={(value) => onChange(value, index, tableRowLabel.name.name)} />
-        {/*todo: pass only numbers*/}
-        <SpreadsheetTableCell label={count} onChange={(value) => onChange(value, index, tableRowLabel.count.name)} />
-        <SpreadsheetTableDeleteBtnCell removeRow={() => removeRow(index)} />
-    </tr>
-)
+const SpreadsheetTableRow = ({ index, row: {name, count}, removeRow, updateCell }) => {
+    const handleSavePreviousNameCell = (currentValue, isNumber) => {
+        updateCell(index, tableRowLabel.name.name, currentValue, isNumber)
+    }
+
+    const handleSavePreviousCountCell = (currentValue, isNumber) => {
+        updateCell(index, tableRowLabel.count.name, currentValue, isNumber)
+    }
+
+    return (
+        <tr className='spreadsheet-table-row'>
+            <SpreadsheetTableCell
+                label={index + 1}
+                readOnly={true}
+            />
+
+            <SpreadsheetTableCell
+                label={name}
+                updateCell={handleSavePreviousNameCell}
+                isNumber={false}
+            />
+
+            <SpreadsheetTableCell
+                label={count}
+                updateCell={handleSavePreviousCountCell}
+                isNumber={true}
+            />
+
+            <SpreadsheetTableDeleteBtnCell
+                removeRow={() => removeRow(index)}
+            />
+        </tr>
+    )
+}
 
 export default SpreadsheetTableRow;
