@@ -4,7 +4,15 @@
     display: flex;
 }
 
-.input-wrapper {
+.spreadsheet-edit-line input {
     padding: 4px 8px;
     width: 100%;
+
+    background: transparent;
+    border: none;
 }
+
+.spreadsheet-edit-line input:focus {
+    outline: none;
+}
+
