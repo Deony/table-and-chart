@@ -1,3 +1,3 @@
-import { tableRowLabel } from "./constants";
+import { tableRowLabel } from './constants';
 
 export { tableRowLabel };

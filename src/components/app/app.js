@@ -1,15 +1,14 @@
-import React, {Component} from 'react';
-import Spreadsheet from "../spreadsheet";
+import React, { PureComponent } from 'react';
+import Spreadsheet from '../spreadsheet';
 import './app.css';
 
-
-class App extends Component {
-    render() {
-        return (
-            <div className='app'>
-                <Spreadsheet />
-            </div>
-        );
-    }
+class App extends PureComponent {
+  render() {
+    return (
+      <div className="app">
+        <Spreadsheet />
+      </div>
+    );
+  }
 }
 export default App;
