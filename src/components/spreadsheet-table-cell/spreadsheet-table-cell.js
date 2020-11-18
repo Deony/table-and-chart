@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './spreadsheet-table-cell.css';
+import PropTypes from 'prop-types';
 
 const SpreadsheetTableCell = ({ label, readOnly, isNumber, updateCell }) => {
   const input = useRef();
@@ -29,7 +30,16 @@ const SpreadsheetTableCell = ({ label, readOnly, isNumber, updateCell }) => {
 };
 
 SpreadsheetTableCell.defaultProps = {
+  readOnly: false,
   isNumber: false,
+  updateCell: () => {},
+};
+
+SpreadsheetTableCell.propTypes = {
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  readOnly: PropTypes.bool,
+  isNumber: PropTypes.bool,
+  updateCell: PropTypes.func,
 };
 
 export default SpreadsheetTableCell;

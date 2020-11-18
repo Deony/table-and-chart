@@ -1,4 +1,5 @@
 import React from 'react';
+import _uniqueId from 'lodash/uniqueId';
 import SpreadsheetMenu from '../spreadsheet-menu';
 import SpreadsheetEditLine from '../spreadsheet-edit-line';
 import SpreadsheetTable from '../spreadsheet-table';
@@ -46,6 +47,7 @@ class Spreadsheet extends React.Component {
       rows: [
         ...state.rows,
         {
+          key: _uniqueId(),
           name: '',
           count: 0,
         },

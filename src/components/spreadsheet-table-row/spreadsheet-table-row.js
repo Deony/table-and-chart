@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SpreadsheetTableCell from '../spreadsheet-table-cell';
 import SpreadsheetTableDeleteBtnCell from '../spreadsheet-table-delete-btn-cell';
 import { tableRowLabel } from '../../constants';
@@ -37,6 +38,16 @@ const SpreadsheetTableRow = ({
       <SpreadsheetTableDeleteBtnCell removeRow={() => removeRow(index)} />
     </tr>
   );
+};
+
+SpreadsheetTableRow.propTypes = {
+  index: PropTypes.number.isRequired,
+  row: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    count: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  }).isRequired,
+  removeRow: PropTypes.func.isRequired,
+  updateCell: PropTypes.func.isRequired,
 };
 
 export default SpreadsheetTableRow;

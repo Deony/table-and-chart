@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import UndoIcon from '@material-ui/icons/Undo';
 import RedoIcon from '@material-ui/icons/Redo';
@@ -33,6 +34,13 @@ const SpreadsheetMenu = ({
       <Button startIcon={<SaveIcon />}>Save</Button>
     </nav>
   );
+};
+
+SpreadsheetMenu.propTypes = {
+  addNewRow: PropTypes.func.isRequired,
+  resetTable: PropTypes.func.isRequired,
+  undoAction: PropTypes.func.isRequired,
+  disabledUndoActionBtn: PropTypes.bool.isRequired,
 };
 
 export default SpreadsheetMenu;
